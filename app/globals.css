@@ -19,24 +19,3 @@ body {
   color: var(--foreground);
   background: var(--background);
 }
-
-/* .logo-wrapper {
-	position: relative;
-	display: flex;
-	justify-content: space-between;
-  } */
-  
-  /* .background-image {
-	position: relative;
-	height: 60%;
-	width: 60%;
-	padding-left: 3%;
-	padding-top: 7%;
-  } */
-  
-
-  /* .right-image {
-	height: 60%;
-	width: 60%;
-	justify-self: end; 
-  } */
