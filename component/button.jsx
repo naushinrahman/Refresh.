@@ -63,8 +63,8 @@ return (
 	<div style={styles.bigbox}>
 		<div style={styles.imageContainer}>
 			<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
-				<Image src="/Hi there!.svg" width={0} height={0} style={{ width: "20%", height: "auto", paddingBottom: "3%" }} alt="Hi there!"/>
-				<Image src="/Do you have any further questions_.svg" width={0} height={0} style={{ width: "70%", height: "auto" }} alt="questions"/>
+				<Image src="/main page/Hi there!.svg" width={0} height={0} style={{ width: "20%", height: "auto", paddingBottom: "3%" }} alt="Hi there!"/>
+				<Image src="/main page/Do you have any further questions_.svg" width={0} height={0} style={{ width: "70%", height: "auto" }} alt="questions"/>
 			</div>
 			<div style={styles.chat}>
 				<div id="chat-container">

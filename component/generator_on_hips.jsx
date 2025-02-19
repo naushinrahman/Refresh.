@@ -50,8 +50,11 @@ export default function Home() {
 
             {/* Main content */}
             <div className="flex flex-col items-center justify-center space-y-4">
-                {/* Clickable image that acts as a button (but won't be part of the random images) */}
-                <div onClick={showNextImage} className="cursor-pointer">
+                <div className="flex justify-center space-x-4 z-0">
+					<img src="/Rectangle 18.svg" alt="brown rectangle" />
+					<img src="/Rectangle 18.svg" alt="brown rectangle" />
+				</div>
+                <div onClick={showNextImage} className="cursor-pointer z-10">
                     <Image
                         src={generatorImage.src} 
                         alt={generatorImage.alt}
@@ -65,7 +68,7 @@ export default function Home() {
                             transform: 'translateX(50%)',  // Optional: centers it horizontally
                         }}
                     />
-                </div>
+					</div>
 
                 {/* Display the current image in order */}
                 <div className="flex justify-center">
