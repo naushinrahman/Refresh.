@@ -19,7 +19,7 @@ return (
 				style={{ width: "90%", height: "auto" }} alt="scroll"/>
 				
 				<div className="absolute inset-0 flex justify-around w-full z-20 pr-48 pl-2">
-					<a href="/hip" className="block w-[16%] h-auto pt-20 shadow-blue">
+					<a href="/hip" className="block w-[16%] h-auto pt-20">
 						<img src="/main page/hips_button.svg" 
 						className="rounded-full transition-shadow duration-300 hover:shadow-[0_15px_35px_rgba(77,38,0,0.9)]" alt="hips button"/>
 					</a>
