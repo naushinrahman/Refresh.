@@ -9,7 +9,7 @@ export default function Home() {
 		{ src: '/hips page/hips 3.svg', style: {position: 'absolute', }, alt: 'Image 3' },
 	];
 
-	const generatorImage = { src: '/generate button.svg', alt: 'Click to go to next image' };
+	const generatorImage = { src: '/generate button.svg', style: {position: 'absolute', }, alt: 'Click to go to next image' };
 
     const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -20,22 +20,25 @@ export default function Home() {
 
     return (
         <div className="flex flex-col items-center">
+			<div className="flex flex-row justify-center">
 				<Image
 					src={images[currentIndex].src}
 					alt={images[currentIndex].alt}
 					width={0} 
 					height={0}
 					style={{width: "70%", height: "auto", zIndex: 10, paddingBottom: "15%"}}/>
+			</div>
 
+			<div>
 				<Image
 					src={generatorImage.src} 
 					alt={generatorImage.alt}
 					width={0} 
 					height={0}
-					style={{width: "50%", height: "auto",}}
+					style={{width: "13rem", height: "auto",}}
 					className="rounded-full shadow-lg transition-shadow duration-300 hover:shadow-[0_15px_30px_rgba(114,176,244,255)]"
-					onClick={showNextImage}
-					/>
+					onClick={showNextImage}/>
+			</div>
 		</div>
     );
 }

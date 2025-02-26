@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Chatbox from "../component/button";
+import Chatbox from "../component/gemini chatbox";
 
 export default function Home() {
 return (
