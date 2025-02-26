@@ -36,7 +36,7 @@ export default function Home() {
 					width={0} 
 					height={0}
 					style={{width: "13rem", height: "auto",}}
-					className="rounded-full shadow-lg transition-shadow duration-300 hover:shadow-[0_15px_30px_rgba(114,176,244,255)]"
+					className="rounded-full duration-300 hover:scale-125"
 					onClick={showNextImage}/>
 			</div>
 		</div>

@@ -21,10 +21,10 @@ export default function Home() {
 				</div>
 
 				<div>
-					<a href="/" style={{ padding: "10px 20px",  }}>
+					<a href="/">
 						<button
-							className="font-bold rounded-full mt-5 mb-10 text-center text-base text-white transition-shadow duration-300 hover:shadow-[0_15px_30px_rgba(68,53,52,255)]"
-							type="button" style={{ backgroundColor: "rgba(215, 98, 154, 1)",  padding: "15px 25px", fontSize: "1.75rem" }} >
+							className="font-bold rounded-full mt-5 mb-10 mr-6 text-center text-white duration-300 hover:scale-125"
+							type="button" style={{ backgroundColor: "rgba(215, 98, 154, 1)",  padding: "10px 15px", fontSize: "1.75rem" }} >
 							RETURN
 						</button>
 					</a>
@@ -40,10 +40,7 @@ export default function Home() {
 						<p className="text-3xl font-bold text-center mt-3">
 							Exercise that can help your hips
 						</p>
-						{/* <button className="text-[#443534] text-xl font-medium px-6 py-1 rounded-full transition-shadow duration-300 hover:shadow-[0_15px_30px_rgba(114,176,244,255)]"
-								style={{ backgroundColor: "rgba(185, 221, 255, 1)" }}>
-							Start Timer
-						</button> */}
+						
 						<div className="z-10">
 							<CountdownTimer initialTime={30} />
 						</div>
