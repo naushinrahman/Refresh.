@@ -13,7 +13,9 @@
     "next": "15.1.7",
     "react": "^19.0.0",
     "react-awesome-shapes": "^0.1.12",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "sweetalert": "^2.1.2",
+    "sweetalert2": "^11.17.2"
   },
   "devDependencies": {
     "postcss": "^8",

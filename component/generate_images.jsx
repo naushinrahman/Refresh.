@@ -2,21 +2,14 @@
 import { useState } from 'react';
 import Image from "next/image";
 
-export default function Home() {
-	const images = [
-		{ src: '/hips page/hips 1.svg', style: {position: 'absolute', }, alt: 'Image 1' },
-		{ src: '/hips page/hips 2.svg', style: {position: 'absolute', }, alt: 'Image 2' },
-		{ src: '/hips page/hips 3.svg', style: {position: 'absolute', }, alt: 'Image 3' },
-	];
-
-	const generatorImage = { src: '/generate button.svg', style: {position: 'absolute', }, alt: 'Click to go to next image' };
-
+const Generate = ({ images }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
-    const showNextImage = () => {
+    const showNextImage = () => { 
         setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
     };
 
+	const generatorImage = { src: '/generate button.svg', style: {position: 'absolute', }, alt: 'Click to go to next image' };
 
     return (
         <div className="flex flex-col items-center">
@@ -42,3 +35,5 @@ export default function Home() {
 		</div>
     );
 }
+
+export default Generate;

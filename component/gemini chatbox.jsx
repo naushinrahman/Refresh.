@@ -157,7 +157,7 @@ const styles = {
   },
   sendButton: {
     padding: '10px',
-    backgroundColor: '#3498db',
+    backgroundColor: 'rgba(114, 176, 244, 255)',
     color: 'white',
     borderRadius: '5px',
     border: 'none',

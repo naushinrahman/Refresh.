@@ -1,18 +1,17 @@
 'use client'
 import Image from "next/image";
-import Generate from "../../component/generate_images";
 import CountdownTimer from "../../component/countdown timer";
 import { Montserrat } from "next/font/google";
+import Generate from "../../component/generate_images";
 
 const montserrat = Montserrat({
 	subsets: ["latin"],
 	weight: ["400", "500", "700"],
-  });
+  })
 
 const imageList = [
-	{ src: '/hips page/hips 1.svg', style: {position: 'absolute', }, alt: 'hips image 1' },
-	{ src: '/hips page/hips 2.svg', style: {position: 'absolute', }, alt: 'hips image 2' },
-	{ src: '/hips page/hips 3.svg', style: {position: 'absolute', }, alt: 'hips image 3' },
+	{ src: '/knees page/knees 1.svg', style: {position: 'absolute', }, alt: 'knees image 1' },
+	{ src: '/knees page/knees 2.svg', style: {position: 'absolute', }, alt: 'knees image 2' },
 ];
 
 export default function Home() {
@@ -42,7 +41,7 @@ export default function Home() {
 					
 					<div className="relative z-10 flex flex-col items-center space-y-16 p-6 pt-8">
 						<p className="text-3xl font-bold text-center mt-3">
-							Exercise that can help your hips
+							Exercise that can help your knees
 						</p>
 						
 						<div className="z-10">
@@ -53,7 +52,9 @@ export default function Home() {
 				<div className="relative w-[30%] flex flex-col space-y-4 items-center">
 					<Image src="brown_text_box.svg" className="absolute top-0 left-0 w-full h-auto z-0" width={0} height={0} style={{ width: "100%", height: "auto" }} alt="Brown Text Box"/>
 					<div className="relative z-10 pt-7">
-						<Generate images={imageList} />
+						<div className="relative z-10 pt-7">
+							<Generate images={imageList} />
+						</div>
 					</div>
 				</div>
 			</div>

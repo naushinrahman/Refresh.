@@ -15,15 +15,21 @@ return (
 				</div>
 			</div>
 			<div className="relative my-24 z-0">
-				<Image src="/main page/scroll_brown_box.svg" width={0} height={0} 
+				<Image src="/main page/Rectangle 11.svg" width={0} height={0} 
 				style={{ width: "90%", height: "auto" }} alt="scroll"/>
+
+				<div className="absolute inset-0 z-20">
+					<p className="text-4xl text-center mr-28 mt-4 font-bold italic">
+						Scroll through these options and click a button
+					</p>
+				</div>
 				
 				<div className="absolute inset-0 flex justify-around w-full z-20 pr-48 pl-2">
 					<a href="/hip" className="block w-[16%] h-auto pt-24">
 						<img src="/main page/hips_button.svg" 
 						className="rounded-full hover:scale-125 duration-300" alt="hips button"/>
 					</a>
-					<a href="/knees" className="block w-[16%] h-auto pt-24">
+					<a href="/knee" className="block w-[16%] h-auto pt-24">
 						<img src="/main page/knee_button.svg" 
 						className="rounded-full hover:scale-125 duration-300" alt="knee button"/>
 					</a>
@@ -46,6 +52,6 @@ return (
 			</div>
 		</div>
 		<Chatbox />
-	</div>
-);
+		</div>
+	);
 }
