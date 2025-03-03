@@ -53,24 +53,22 @@ const CountdownTimer = ({ initialTime }) => {
 
     return (
         <div className="flex flex-col items-center justify-center min-h-screen text-white">
-			
-			<button 
-			onClick={startTimer}
-			className="text-white rounded-full font-bold duration-300 hover:scale-125" 
-			style={{ 
-				paddingTop: "5px",
-				paddingBottom: "5px", 
-				paddingLeft: "15px", 
-				paddingRight: "15px", 
-				margin: "8px", 
-				fontSize: "28px", 
-				backgroundColor: "rgba(114, 176, 244, 255)", }} 
-			> ▷ </button>
-
 			<p className="text-3xl font-bold" style={{ marginTop: "15px", marginBottom: "20px"}} >{timeLeft}s </p>
-
 			
 			<div className="flex space-x-4">
+				<button 
+				onClick={startTimer}
+				className="text-white rounded-full font-bold duration-300 hover:scale-125" 
+				style={{ 
+					paddingTop: "5px",
+					paddingBottom: "5px", 
+					paddingLeft: "15px", 
+					paddingRight: "15px", 
+					margin: "8px", 
+					fontSize: "36px", 
+					backgroundColor: "rgba(114, 176, 244, 255)", }} 
+				> ▷ </button>
+
 				<button 
 				onClick={pauseTimer}
 				className="text-white rounded-full font-bold duration-300 hover:scale-125" 
@@ -79,7 +77,7 @@ const CountdownTimer = ({ initialTime }) => {
 					paddingLeft: "15px", 
 					paddingRight: "15px", 
 					margin: "8px", 
-					fontSize: "24px", 
+					fontSize: "34px", 
 					backgroundColor: "rgba(114, 176, 244, 255)" }} 
 				>⏸</button>
 				
@@ -91,7 +89,7 @@ const CountdownTimer = ({ initialTime }) => {
 					paddingLeft: "15px", 
 					paddingRight: "15px", 
 					margin: "8px", 
-					fontSize: "28px", 
+					fontSize: "36px", 
 					backgroundColor: "rgba(114, 176, 244, 255)" }}
 				> ⏹ </button>
 				
@@ -103,7 +101,7 @@ const CountdownTimer = ({ initialTime }) => {
 					paddingLeft: "15px", 
 					paddingRight: "15px", 
 					margin: "8px", 
-					fontSize: "28px", 
+					fontSize: "36px", 
 					backgroundColor: "rgba(114, 176, 244, 255)" }}
 				> ↺ </button>
 			</div>

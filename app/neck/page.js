@@ -3,6 +3,7 @@ import Image from "next/image";
 import CountdownTimer from "../../component/countdown timer";
 import { Montserrat } from "next/font/google";
 import Generate from "../../component/generate_images";
+import { useState } from "react";
 
 const montserrat = Montserrat({
 	subsets: ["latin"],
@@ -16,12 +17,18 @@ const imageList = [
 ];
 
 export default function Home() {
+	const [currentIndex, setCurrentIndex] = useState(0);
+	
+	const showNextImage = () => { 
+		setCurrentIndex((prevIndex) => (prevIndex + 1) % imageList.length);
+	};
+
 	return (
 		<div className={`${montserrat.className}`}>
 			<div className="flex flex-row justify-between">
 				<div>
 					<Image src="icon.svg" className="fixed rounded-xl" width={0} height={0} 
-					style={{ width: "9%", height: "auto", paddingLeft: "1%", paddingTop: "8px" }} alt="Refresh Logo"/>
+					style={{ width: "9%", height: "auto", paddingLeft: "1%", paddingTop: "20px" }} alt="Refresh Logo"/>
 				</div>
 
 				<div>
@@ -42,19 +49,37 @@ export default function Home() {
 					
 					<div className="relative z-10 flex flex-col items-center space-y-16 p-6 pt-8">
 						<p className="text-3xl font-bold text-center mt-3">
-							Exercise that can help your knees
+							These exercises can help your neck
 						</p>
+
+						<div>
+							<Image
+								src="/generate button.svg"
+								alt="Click to go to next image"
+								width={0} 
+								height={0}
+								style={{ width: "15rem", height: "auto" }}
+								className="rounded-full duration-300 hover:scale-125"
+								onClick={showNextImage}/>
+						</div>
 						
 						<div className="z-10">
+							<p className="text-3xl font-bold italic text-center mb-2">Timer</p>
+
 							<CountdownTimer initialTime={30} />
 						</div>
 					</div>
 				</div>
-				<div className="relative w-[30%] flex flex-col space-y-4 items-center">
+				<div className="relative w-[30%] flex flex-col items-center">
 					<Image src="brown_text_box.svg" className="absolute top-0 left-0 w-full h-auto z-0" width={0} height={0} style={{ width: "100%", height: "auto" }} alt="Brown Text Box"/>
-					<div className="relative z-10 pt-7">
-						<div className="relative z-10 pt-7">
-							<Generate images={imageList} />
+
+					<div className="relative z-10 flex flex-col items-center space-y-6 p-6 pt-8">
+						<p className="text-3xl font-bold text-center mt-3">
+							Follow along with these movements
+						</p>
+
+						<div className="relative z-10">
+							<Generate images={imageList} currentIndex={currentIndex} />
 						</div>
 					</div>
 				</div>
