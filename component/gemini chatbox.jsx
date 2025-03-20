@@ -15,14 +15,13 @@ function Chatbox() {
       setMessages([...messages, { text: message, sender: 'user' }]);
       setMessage('');
 
-      // Call function to handle Gemini response or any other logic
       await getGeminiResponse(message);
     }
   };
 
   const getGeminiResponse = async (message) => {
     try {
-      const apiKey = 'AIzaSyBPUFRQNB9kxwjLfPKXcespa-Z0Mhq1Tms'; // Replace with your actual API key
+      const apiKey = 'AIzaSyBPUFRQNB9kxwjLfPKXcespa-Z0Mhq1Tms'; 
       const response = await fetch(
         'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.0-pro:generateContent?key=' + apiKey,
         {
@@ -63,8 +62,8 @@ return (
 	<div style={styles.bigbox}>
 		<div style={styles.imageContainer}>
 			<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
-				<Image src="/main page/Hi there!.svg" width={0} height={0} style={{ width: "20%", height: "auto", paddingBottom: "3%" }} alt="Hi there!"/>
-				<Image src="/main page/Do you have any further questions_.svg" width={0} height={0} style={{ width: "70%", height: "auto" }} alt="questions"/>
+				<Image src="/main_page/Hi there!.svg" width={0} height={0} style={{ width: "20%", height: "auto", paddingBottom: "3%" }} alt="Hi there!"/>
+				<Image src="/main_page/Do you have any further questions_.svg" width={0} height={0} style={{ width: "70%", height: "auto" }} alt="questions"/>
 			</div>
 			<div style={styles.chat}>
 				<div id="chat-container">
