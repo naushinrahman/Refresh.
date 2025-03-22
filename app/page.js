@@ -46,7 +46,7 @@ return (
 				<div className="absolute bottom-0 inset-x-0 z-20 flex justify-center pr-20 pb-5">
 					<a href="/mindGame" className="inline-flex w-fit">
 						<img src="/main_page/Test_your_mind.svg" 
-						className="rounded-md hover:scale-125 duration-300" width={0} height={0} style={{ width: "90%", height: "auto" }} alt="test your mind"/> 
+						className="rounded-md hover:scale-110 duration-300" width={0} height={0} style={{ width: "90%", height: "auto" }} alt="test your mind"/> 
 					</a>
 				</div>
 			</div>

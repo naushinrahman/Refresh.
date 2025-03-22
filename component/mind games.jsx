@@ -19,7 +19,7 @@ const MemoryGame = () => {
 						<p style={{ fontSize: '26px', marginTop: "20px" }}>1. Memorize the order of squares as they light up</p>
 						<p style={{ fontSize: '26px', marginTop: "15px" }}>2. Click the squares in the correct sequence</p>
 						<p style={{ fontSize: '26px', marginTop: "15px" }}>3. Complete all 10 levels to win!</p>
-						<button className="rounded-full duration-300 hover:scale-125" 
+						<button className="rounded-full" 
 						style={{ 
 							padding: "5px 17px", 
 							fontSize: "32px", 
@@ -27,7 +27,10 @@ const MemoryGame = () => {
 							backgroundColor: '#b9ddff',
 							color: '#443534',
 							fontWeight: '500',
+							transition: "transform 0.3s ease-in-out",
 						}}
+						onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.10)")}
+ 						 onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
 						onClick={() => setGameStarted(true)}>
 							Start game
 						</button>
@@ -47,26 +50,49 @@ const GameBoard = () => {
 	const [gameOver, setGameOver] = useState(false);
 	const [isUserTurn, setIsUserTurn] = useState(false);
 
+	const squares = [
+		{ id: 0, color: "#9333ea" },
+		{ id: 1, color: "#ec4899" },
+		{ id: 2, color: "#3b82f6" },
+		{ id: 3, color: "#55BB16" },
+	  ];
 	
 	const startGame = () => {
-		const newSequence = [Math.floor(Math.random() * 4)];
-		setSequence(newSequence);
+		generateSequence();
 		setCurrentIndex(0);
-		setLevel(1);
 		setGameOver(false);
 		setIsUserTurn(false);
-		startDemonstration(newSequence);
 	};
 
+	const generateSequence = () => {
+		const nextValue = Math.floor(Math.random()* 4);
+
+		setSequence((prevSequence) => {
+			const updatedSequence = [...prevSequence, nextValue];
+			return updatedSequence;
+		})
+	};
+
+	const gameLevel = () => {
+
+		//i want to map value from sequence to div in grid hashmap
+		//change background color of that div to #bbcacb 
+		//loop for all values in sequence
+		//then wait for user to click div that maps to first mapped div
+		//if the click wrong one game over
+		//if correct click next div
+	}
+	  
 	const gameEnd = () => {
 		setGameOver(true)
+		setIsUserTurn(false);
 	}
 
 	const startDemonstration = async (newSequence) => {
 		setIsUserTurn(false);
 	  
 		for (let i = 0; i < newSequence.length; i++) {
-		  console.log(`Card ${newSequence[i]} grows`); 
+		  
 		  await new Promise(resolve => setTimeout(resolve, 1000));
 		}
 	  
@@ -74,87 +100,102 @@ const GameBoard = () => {
 	  };
 
 	return (
-		<>
 		<div className={`${montserrat.className}`}
 		style={{
 			zIndex: 50, 
 			position: 'relative',
-			fontSize: '26px',
+			fontSize: '36px',
 			marginTop: "7.5rem",
 			minHeight: '100vh',
-			}}>
-		  <h2 >{gameOver ? "Game Over" : `Level ${level}`}</h2>
+			fontWeight: 'bold'
+			}}
+		>
+		<h2 >{gameOver ? "Game Over" : `Level ${level}`}</h2>
 
-		  <div
-  style={{
-    display: "grid",
-    gridTemplateColumns: "repeat(2, 1fr)",
-    gap: "16px",
-    width: "100%",
-  }}
->
-  <div
-    style={{
-      backgroundColor: "#9333ea", // Purple-600
-      padding: "40px",
-      height: "160px",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      color: "white",
-      fontSize: "20px",
-    }}
-  >
-    Square 1
-  </div>
-  <div
-    style={{
-      backgroundColor: "#ec4899", // Pink-500
-      padding: "40px",
-      height: "160px",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      color: "white",
-      fontSize: "20px",
-    }}
-  >
-    Square 2
-  </div>
-  <div
-    style={{
-      backgroundColor: "#3b82f6", // Blue-500
-      padding: "40px",
-      height: "160px",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      color: "white",
-      fontSize: "20px",
-    }}
-  >
-    Square 3
-  </div>
-  <div
-    style={{
-      backgroundColor: "#84cc16", // Lime-500
-      padding: "40px",
-      height: "160px",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      color: "white",
-      fontSize: "20px",
-    }}
-  >
-    Square 4
-  </div>
-</div>
-
-
+		<div
+			style={{
+				display: "grid",
+				gridTemplateColumns: "repeat(2, 1fr)",
+				gap: "16px",
+				width: "100%",
+			}}
+		>
+			{squares.map((square) => (
+				<div
+				key={square.id}
+				style={{
+					backgroundColor: `${square.color}`,
+					padding: "40px",
+					height: "160px",
+					display: "flex",
+					alignItems: "center",
+					justifyContent: "center",
+					color: "white",
+					fontSize: "20px",
+					}}
+				>
+					square {square.id}
+				</div>
+			))}
+			{/* <div
+				style={{
+				backgroundColor: "#9333ea",
+				padding: "40px",
+				height: "160px",
+				display: "flex",
+				alignItems: "center",
+				justifyContent: "center",
+				color: "white",
+				fontSize: "20px",
+				}}
+			>
+				Square 1
+			</div>
+			<div
+				style={{
+				backgroundColor: "#ec4899",
+				padding: "40px",
+				height: "160px",
+				display: "flex",
+				alignItems: "center",
+				justifyContent: "center",
+				color: "white",
+				fontSize: "20px",
+				}}
+			>
+				Square 2
+			</div>
+			<div
+				style={{
+				backgroundColor: "#3b82f6",
+				padding: "40px",
+				height: "160px",
+				display: "flex",
+				alignItems: "center",
+				justifyContent: "center",
+				color: "white",
+				fontSize: "20px",
+				}}
+			>
+				Square 3
+			</div>
+			<div
+				style={{
+				backgroundColor: "#55BB16", 
+				padding: "40px",
+				height: "160px",
+				display: "flex",
+				alignItems: "center",
+				justifyContent: "center",
+				color: "white",
+				fontSize: "20px",
+				}}
+			>
+				Square 4
+			</div> */}
 		</div>
-		</>
-	  );
+	</div>
+	);
 };
 
 export default MemoryGame;

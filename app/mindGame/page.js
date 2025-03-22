@@ -38,7 +38,7 @@ export default function Home() {
 		</div>
     	<div className="flex justify-center space-x-5">
       		<Image src="/head.svg" width={0} height={0} 
-			style={{ position: 'fixed', width: "20%", bottom: "0", left: "0", paddingBottom: "1%", }} alt="floating head"/>
+			style={{ position: 'fixed', width: "18%", bottom: "0", left: "0", paddingBottom: "5px", }} alt="floating head"/>
 
 			<div className="relative w-full flex flex-col items-center">
 			<Image src="brown_text_box.svg" className="absolute z-0" width={0} height={0} 
