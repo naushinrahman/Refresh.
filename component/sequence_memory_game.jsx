@@ -189,13 +189,13 @@ const SequenceMemoryGame = () => {
 					padding: "5px 16px",
 					marginTop: "30px",
 					fontSize: "30px",
-					// backgroundColor: "#EE2266", 
-					backgroundColor: "#a687ca",
+					//backgroundColor: "#EE2266", 
+					backgroundColor: "#9347E8",
 					color: "white", 
 					cursor: "pointer",
 					fontWeight: 600,
 					borderRadius: "40px",
-					transition: "transform 0.4s ease-in-out"
+					transition: "transform 0.5s ease-in-out"
 				}}
 				onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.2)")}
 				onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}

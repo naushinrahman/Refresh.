@@ -28,14 +28,19 @@ export default function Home() {
 			<div className="flex flex-row justify-between">
 				<div>
 					<Image src="icon.svg" className="fixed rounded-xl" width={0} height={0} 
-					style={{ width: "9%", height: "auto", paddingLeft: "1%", paddingTop: "20px" }} alt="Refresh Logo"/>
+					style={{ width: "10%", height: "auto", paddingLeft: "15px", paddingTop: "15px" }} alt="Refresh Logo"/>
 				</div>
 
 				<div>
 					<a href="/">
 						<button
-							className="font-medium rounded-full mt-5 mb-10 mr-6 text-center text-white duration-300 hover:scale-125"
-							type="button" style={{ backgroundColor: "rgba(215, 98, 154, 1)",  padding: "10px 15px", fontSize: "1.75rem" }} >
+							className="font-medium rounded-full mt-5 mb-10 mr-8 text-center text-white duration-500 hover:scale-125"
+							type="button" 
+							style={{ 
+								backgroundColor: "#D44087",  
+								padding: "5px 27px", 
+								fontSize: "1.7rem",
+							}} >
 							RETURN
 						</button>
 					</a>
@@ -52,19 +57,21 @@ export default function Home() {
 							These exercises can help your hips
 						</p>
 						
-						<div>
-							<Image
-								src="/generate button.svg"
-								alt="Click to go to next image"
-								width={0} 
-								height={0}
-								style={{ width: "15rem", height: "auto" }}
-								className="rounded-full duration-300 hover:scale-125"
-								onClick={showNextImage}/>
-						</div>
+						<button
+							className="font-medium rounded-full text-center text-white duration-500 hover:scale-125"
+							type="button"
+							onClick={showNextImage}
+							style={{ 
+								backgroundColor: '#b9ddff',
+								color: '#443534',  
+								padding: "5px 32px", 
+								fontSize: "1.6rem",
+							}} >
+							Next exercise
+						</button>
 
 						<div className="z-10">
-							<p className="text-3xl font-bold italic text-center mb-2">Timer</p>
+							<p className="text-3xl font-bold text-center mb-2">Timer</p>
 							
 							<CountdownTimer initialTime={30} />
 						</div>
