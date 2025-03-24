@@ -5,9 +5,9 @@ export default function Home() {
 return (
 	<div>
 		<div className="flex flex-col items-center justify-center">
-			<div className="logo-wrapper flex items-center justify-between w-full">
-				<Image className="background-image" src="/main_page/main logo.svg" width={0} height={0} 
-				style={{ width: "52%", height: "auto", paddingLeft: "10%" }} alt="Refresh logo"/>
+			<div className="flex items-center justify-between">
+				<Image className="" src="/main_page/main logo.svg" width={0} height={0} 
+				style={{ width: "50%", height: "auto", paddingLeft: "6%" }} alt="Refresh logo"/>
 
 				<div className="flex justify-end py-10">
 					<Image src="/main_page/ICON_right.svg" width={0} height={0} 
@@ -44,7 +44,7 @@ return (
 					<Image src="/main_page/neck circle.svg" width={0} height={0} style={{ width: "22%", height: "auto" }} alt="neck circle"/>
 				</div>
 				<div className="absolute bottom-0 inset-x-0 z-20 flex justify-center pr-20 pb-5">
-					<a href="/mindGame" className="inline-flex w-fit">
+					<a href="/memory_game_main" className="inline-flex w-fit">
 						<img src="/main_page/Test_your_mind.svg" 
 						className="rounded-md hover:scale-110 duration-300" width={0} height={0} style={{ width: "90%", height: "auto" }} alt="test your mind"/> 
 					</a>

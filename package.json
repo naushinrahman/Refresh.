@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "konva": "^9.3.18",
-    "next": "15.1.7",
+    "next": "^15.2.3",
     "react": "^19.0.0",
     "react-awesome-shapes": "^0.1.12",
     "react-dom": "^19.0.0",
