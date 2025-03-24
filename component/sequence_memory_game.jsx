@@ -29,6 +29,8 @@ const SequenceMemoryGame = () => {
 	// 	{ id: 3, color: "#55bb16" },
 	// ]);
 
+	const winLevel = 6;
+
 	useEffect(() => {
 		if(gameStarted) {
 			increaseSequence();
@@ -37,7 +39,15 @@ const SequenceMemoryGame = () => {
 	
 
 	const increaseSequence = () => {
-		setSequence((prevSeq) => [...prevSeq,  Math.floor(Math.random()* 4)]);
+		setSequence((prevSeq) => {
+			const lastTwo = prevSeq.slice(-2);
+			let newNum;
+			do {
+				newNum = Math.floor(Math.random() * 4);
+			} while (newNum === lastTwo[0] && newNum === lastTwo[1]);
+	
+			return [...prevSeq, newNum];
+		});
 	};
 
 
@@ -124,10 +134,10 @@ const SequenceMemoryGame = () => {
 	}
 
 	useEffect(() => {
-		if (gameStarted && sequence.length > 0 && sequence.length < 5) {
+		if (gameStarted && sequence.length > 0 && sequence.length < winLevel) {
             gameLevel();
         }
-		if (sequence.length === 5) {
+		if (sequence.length === winLevel) {
 			winAchieved();
 		}
 		console.log("seqeunce array length:", sequence.length);
