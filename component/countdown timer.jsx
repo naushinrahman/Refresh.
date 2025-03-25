@@ -58,7 +58,7 @@ const CountdownTimer = ({ initialTime }) => {
 			<div className="flex space-x-4">
 				<button 
 				onClick={startTimer}
-				className="text-white rounded-full font-bold duration-300 hover:scale-125" 
+				className="text-white rounded-full font-bold duration-500 hover:scale-125" 
 				style={{ 
 					paddingTop: "5px",
 					paddingBottom: "5px", 
@@ -71,7 +71,7 @@ const CountdownTimer = ({ initialTime }) => {
 
 				<button 
 				onClick={pauseTimer}
-				className="text-white rounded-full font-bold duration-300 hover:scale-125" 
+				className="text-white rounded-full font-bold duration-500 hover:scale-125" 
 				style={{ paddingTop: "5px",
 					paddingBottom: "5px", 
 					paddingLeft: "15px", 
@@ -83,7 +83,7 @@ const CountdownTimer = ({ initialTime }) => {
 				
 				<button 
 				onClick={stopTimer}
-				className="text-white rounded-full font-bold duration-300 hover:scale-125" 
+				className="text-white rounded-full font-bold duration-500 hover:scale-125" 
 				style={{ paddingTop: "5px",
 					paddingBottom: "5px", 
 					paddingLeft: "15px", 
@@ -95,7 +95,7 @@ const CountdownTimer = ({ initialTime }) => {
 				
 				<button 
 				onClick={resetTimer}
-				className="text-white rounded-full font-bold duration-300 hover:scale-125" 
+				className="text-white rounded-full font-bold duration-500 hover:scale-125" 
 				style={{ paddingTop: "5px",
 					paddingBottom: "5px", 
 					paddingLeft: "15px", 

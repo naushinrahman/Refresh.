@@ -40,6 +40,7 @@ export default function Home() {
 								backgroundColor: "#D44087",  
 								padding: "5px 27px", 
 								fontSize: "1.7rem",
+								letterSpacing: '1px', 
 							}} >
 							RETURN
 						</button>

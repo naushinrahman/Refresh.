@@ -27,7 +27,8 @@ export default function Home() {
 							fontSize: "1.7rem",
 							position: "fixed", 
 							top: "7px",
-							right: "10px", 
+							right: "10px",
+							letterSpacing: '1px', 
 							}} >
 						RETURN
 					</button>
@@ -41,16 +42,16 @@ export default function Home() {
 
 			<div className="relative w-full flex flex-col items-center">
 			<Image src="brown_text_box.svg" className="absolute z-0" width={0} height={0} priority={true}
-			style={{ width: "32%", height: "auto", top: "5.5rem", }} alt="Brown Text Box"/>
+			style={{ width: "32%", height: "auto", top: "6.5rem", }} alt="Brown Text Box"/>
 
 			<div className="w-full flex justify-center">
-				<div className="absolute z-10 w-[30%]" style={{ right: "35%", top: "7.5rem" }}>
+				<div className="absolute z-10 w-[30%]" style={{ right: "35%", top: "8.5rem" }}>
 					<div className="flex flex-col items-center text-center font-bold">
 						<h1 className="text-4xl font-bold">Memory Game Instructions</h1>
 						<p style={{ fontSize: '26px', marginTop: "20px" }}>1. Memorize the order of squares as they light up</p>
 						<p style={{ fontSize: '26px', marginTop: "15px" }}>2. Click the squares in the correct sequence</p>
-						<p style={{ fontSize: '26px', marginTop: "15px" }}>3. Complete all 10 levels to win!</p>
-						<a href="/memory_game">
+						<p style={{ fontSize: '26px', marginTop: "15px" }}>3. Complete all levels to win!</p>
+						<a href="/sequence_game">
 							<button className="rounded-full duration-500 hover:scale-110" 
 							style={{ 
 								padding: "5px 27px", 

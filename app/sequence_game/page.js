@@ -29,7 +29,8 @@ const montserrat = Montserrat({
 							fontSize: "1.6rem",
 							position: "fixed", 
 							top: "7px",
-							right: "10px", 
+							right: "10px",
+							letterSpacing: '1px', 
 							}} >
 						RETURN
 					</button>
@@ -42,11 +43,11 @@ const montserrat = Montserrat({
   
 			<div className="relative w-full flex flex-col items-center">
 				<Image src="brown_text_box.svg" className="absolute z-0" width={0} height={0} priority={true}
-				style={{ width: "32%", height: "auto", top: "5.5rem", }} alt="Brown Text Box"/>
+				style={{ width: "32%", height: "auto", top: "6rem", }} alt="Brown Text Box"/>
 	
 				<div className="w-full flex justify-center">
 					<div className="absolute z-10 w-[30%]" style={{ right: "35%", top: "7.5rem" }}>
-						<div className="flex flex-col items-center text-center font-bold">
+						<div className="flex flex-col items-center text-center">
 							<SequenceMemoryGame/>
 						</div>
 					</div>

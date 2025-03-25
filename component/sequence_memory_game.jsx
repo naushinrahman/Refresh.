@@ -22,12 +22,6 @@ const SequenceMemoryGame = () => {
 		{ id: 2, color: "#fffcf0" },
 		{ id: 3, color: "#71b0f5" },
 	]);
-	// const [squares, setSquares] = useState([
-	// 	{ id: 0, color: "#9333ea" },
-	// 	{ id: 1, color: "#ec4899" },
-	// 	{ id: 2, color: "#3b82f6" },
-	// 	{ id: 3, color: "#55bb16" },
-	// ]);
 
 	const winLevel = 6;
 
@@ -64,7 +58,7 @@ const SequenceMemoryGame = () => {
                     sq.id === id ? { ...sq, color: squares[id].color } : sq
                 )
             );
-        }, 900);
+        }, 1000);
     };
 	
 
@@ -131,6 +125,7 @@ const SequenceMemoryGame = () => {
 
 	function restartGame() {
 		setGameStarted(true);
+		setGameOver(false);
 	}
 
 	useEffect(() => {
@@ -140,7 +135,6 @@ const SequenceMemoryGame = () => {
 		if (sequence.length === winLevel) {
 			winAchieved();
 		}
-		console.log("seqeunce array length:", sequence.length);
     }, [sequence]);
 
 
@@ -150,12 +144,12 @@ const SequenceMemoryGame = () => {
 			zIndex: 50, 
 			position: 'relative',
 			marginTop: "0.25rem",
-			minHeight: '100vh',
-			fontWeight: 'bold'
 			}}
 		>
-		<p style={{paddingBottom: "8px", fontSize: '36px',}}>
-			{playerWon && gameOver ? "You Win!" : gameOver ? "Game Over" : `Level ${level}`}</p>
+
+		<p style={{paddingBottom: "15px", fontSize: '36px', fontWeight: 600}}>
+			{playerWon && gameOver ? "You Win!" : gameOver ? "Game Over" : `Level ${level}`}
+		</p>
 
 		<div
 			style={{
@@ -184,16 +178,16 @@ const SequenceMemoryGame = () => {
 		<div>
 			{ !gameStarted ? (
 				<button 
-				onClick={() => restartGame}
+				onClick={() => restartGame()}
 				style={{
-					padding: "5px 16px",
+					padding: "5px 22px",
 					marginTop: "30px",
-					fontSize: "30px",
-					//backgroundColor: "#EE2266", 
+					fontSize: "30px", 
 					backgroundColor: "#9347E8",
 					color: "white", 
 					cursor: "pointer",
 					fontWeight: 600,
+					letterSpacing: "1px",
 					borderRadius: "40px",
 					transition: "transform 0.5s ease-in-out"
 				}}
