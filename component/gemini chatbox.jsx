@@ -66,7 +66,7 @@ return (
 							<Message key={index} message={msg.text} sender={msg.sender} />
 						))}
 					</div>
-					<div style={{ ...styles.inputArea, maxWidth: '600px', margin: '0 auto' }}>
+					<div style={{ ...styles.inputArea, maxWidth: '800px', margin: '0 auto' }}>
 						<input
 							type="text"
 							id="message-input"
@@ -104,11 +104,13 @@ const styles = {
     maxWidth: '1300px',
     margin: '0 auto',
     marginTop: '20px',
+	marginBottom: '20px',
   },
   imageContainer: {
     position: 'relative',
     width: '100%',
     textAlign: 'center',
+	justifyContent: 'center',
   },
   header1: {
     marginTop: '20px',
@@ -125,6 +127,7 @@ const styles = {
     fontFamily: '"Lucida Console", "Courier New", monospace',
   },
   chat: {
+	marginTop: '25px',
     width: '100%',
     borderRadius: '5px',
     padding: '20px',
@@ -164,7 +167,7 @@ const styles = {
     backgroundColor: '#F9F6F1',
     textAlign: 'right',
 	color: 'black',
-	fontSize: "20px"
+	fontSize: "22px",
   },
   geminiMessage: {
     padding: '8px',
@@ -173,7 +176,7 @@ const styles = {
     backgroundColor: '#ECE5DD',
     textAlign: 'left',
 	color: 'black',
-	fontSize: "20px"
+	fontSize: "22px",
   },
 };
 
