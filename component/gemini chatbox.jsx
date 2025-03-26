@@ -27,7 +27,7 @@ function Chatbox() {
 			  "Content-Type": "application/json",
 			},
 			body: JSON.stringify({
-				message: message + " (Keep the response short, polite and to the point.)",
+				message: message + " (Keep the response polite and friendly for elderly)",
 			}),
 		  });
 	  
