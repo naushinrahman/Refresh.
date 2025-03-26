@@ -15,6 +15,6 @@ There is also a simple sequence memory game allowing users to strengthen their m
 
 ### Technologies Used
 - AI-powered responses using Google's Gemini API
-- 
+- Google Cloud Text-to-Speech API for TTS
 - Next.js and React for resuable components of game and timer
 - CSS Styling for an engaging UI
