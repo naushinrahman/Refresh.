@@ -11,10 +11,9 @@ There is also a simple sequence memory game allowing users to strengthen their m
 ### Key Features
 - UI: large text with high contrast to make reading and navigation easy
 - use of simple icons to convey information for ESL users
-- AI chatbot enabled with text-to-speech to answer any questions
+- AI chatbot enabled to answer any questions
 
 ### Technologies Used
 - AI-powered responses using Google's Gemini API
-- Google Cloud Text-to-Speech API for TTS
 - Next.js and React for resuable components of game and timer
 - CSS Styling for an engaging UI
