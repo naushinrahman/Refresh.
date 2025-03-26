@@ -21,34 +21,28 @@ function Chatbox() {
 
   const getGeminiResponse = async (message) => {
     try {
-      const apiKey = 'AIzaSyBPUFRQNB9kxwjLfPKXcespa-Z0Mhq1Tms'; 
-      const response = await fetch(
-        'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.0-pro:generateContent?key=' + apiKey,
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            contents: [
-              {
-                parts: [
-                  {
-                    text: message,
-                  },
-                ],
-              },
-            ],
-          }),
-        }
-      );
+		const response = await fetch("/api/gemini", {
+			method: "POST",
+			headers: {
+			  "Content-Type": "application/json",
+			},
+			body: JSON.stringify({ message }),
+		  });
+	  
+		  const responseText = await response.text();
+		  const data = JSON.parse(responseText);
+	  
+		  const geminiResponse = data.candidates[0].content.parts[0].text;
 
-      const data = await response.json();
-      const geminiResponse = data.candidates[0].content.parts[0].text;
+		  const formattedResponse = geminiResponse
+			.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') 
+			.replace(/\*(.*?)\*/g, '<em>$1</em>')          
+			.replace(/\n/g, '<br/>');
+
       setMessages((prevMessages) => [
         ...prevMessages,
-        { text: geminiResponse, sender: 'gemini' },
-      ]);
+        { text: formattedResponse, sender: 'gemini' },
+    ]);
     } catch (error) {
       console.error('Error:', error);
       setMessages((prevMessages) => [
@@ -95,7 +89,7 @@ return (
 const Message = ({ message, sender }) => {
   return (
     <div style={sender === 'user' ? styles.userMessage : styles.geminiMessage}>
-      {message}
+      <div dangerouslySetInnerHTML={{ __html: message }} />
     </div>
   );
 };
@@ -131,7 +125,6 @@ const styles = {
     fontFamily: '"Lucida Console", "Courier New", monospace',
   },
   chat: {
-    marginTop: '30px',
     width: '100%',
     borderRadius: '5px',
     padding: '20px',
@@ -139,8 +132,8 @@ const styles = {
   chatDisplay: {
     maxHeight: '300px',
     overflowY: 'auto',
-    marginBottom: '10px',
-	padding: '10%',
+    marginBottom: '30px',
+	padding: '5%',
   },
   inputArea: {
     display: 'flex',
@@ -150,9 +143,10 @@ const styles = {
     flex: 1,
     padding: '10px',
     borderRadius: '5px',
-    border: '1px solid #B9DDFF',
+    border: '2px solid #B9DDFF',
     marginRight: '10px',
-	color: 'black'
+	color: 'black',
+	fontSize: "28px"
   },
   sendButton: {
     padding: '10px',
@@ -161,6 +155,7 @@ const styles = {
     borderRadius: '5px',
     border: 'none',
     cursor: 'pointer',
+	fontSize: "30px"
   },
   userMessage: {
     padding: '8px',
@@ -169,6 +164,7 @@ const styles = {
     backgroundColor: '#F9F6F1',
     textAlign: 'right',
 	color: 'black',
+	fontSize: "20px"
   },
   geminiMessage: {
     padding: '8px',
@@ -177,6 +173,7 @@ const styles = {
     backgroundColor: '#ECE5DD',
     textAlign: 'left',
 	color: 'black',
+	fontSize: "20px"
   },
 };
 
