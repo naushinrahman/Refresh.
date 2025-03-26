@@ -26,7 +26,9 @@ function Chatbox() {
 			headers: {
 			  "Content-Type": "application/json",
 			},
-			body: JSON.stringify({ message }),
+			body: JSON.stringify({
+				message: message + " (Keep the response short, polite and to the point.)",
+			}),
 		  });
 	  
 		  const responseText = await response.text();
