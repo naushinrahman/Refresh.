@@ -22,7 +22,7 @@ const SequenceMemoryGame = () => {
         { id: 2, color: "#fffcf0" },
         { id: 3, color: "#71b0f5" },
     ];
-	const winLevel = 6;
+	const winLevel = 9;
 	
 	useEffect(() => {
         if (gameStarted) {
